@@ -6,8 +6,10 @@ $("ul").on("click", "li", function(e){
 
 
 $("ul").on("click","span", function(e){
+    $(this).parent().fadeOut(500, function(){
+        $(this).remove();
+    });
     e.stopPropagation();
-   $(this).parent().remove();
 });
 
 $("input[type=text]").on("keypress", function(e){
@@ -18,5 +20,5 @@ $("input[type=text]").on("keypress", function(e){
  });
 
  $(".fa-pencil-square-o").on("click", function(e){
-    $("input[type=text]").toggleClass("visi");
+    $("input[type=text]").fadeToggle();
  });
